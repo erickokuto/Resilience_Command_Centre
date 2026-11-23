@@ -1,0 +1,47 @@
+Variable,Type / unit,Role,Definition,core_candidate,handling
+po_id,text,ID,Unique purchase order identifier,False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+item_id,text,ID,Purchase order line identifier; together with po_id forms key,False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+order_date,ISO date,Predictor,Purchase order creation date,True,Fit transforms on Train; date/categorical encoding as appropriate
+as_of_date,ISO date,ID,Prediction cutoff; equals order date,False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+supplier_id,text,Predictor,Synthetic supplier identifier,True,Fit transforms on Train; date/categorical encoding as appropriate
+material_group,text,Predictor,Material family,True,Fit transforms on Train; date/categorical encoding as appropriate
+plant_id,text,Predictor,Synthetic German receiving plant,True,Fit transforms on Train; date/categorical encoding as appropriate
+origin_country,text,Predictor,Supplier origin,True,Fit transforms on Train; date/categorical encoding as appropriate
+order_qty,integer,Predictor,Units ordered,True,Fit transforms on Train; date/categorical encoding as appropriate
+transport_mode,text,Predictor,"Road, Rail, Air or Sea",True,Fit transforms on Train; date/categorical encoding as appropriate
+promised_date,ISO date,Predictor,Contractual receipt deadline,True,Fit transforms on Train; date/categorical encoding as appropriate
+planned_lead_days,integer,Predictor,Promised calendar days from order,True,Fit transforms on Train; date/categorical encoding as appropriate
+supplier_otd_rate,decimal 0–1,Predictor,"Historical on-time proportion, prior completed receipts only; smoothed",True,Fit transforms on Train; date/categorical encoding as appropriate
+prior_lt_mean,days,Predictor,Mean of up to 30 prior completed supplier orders; baseline prior if sparse,True,Fit transforms on Train; date/categorical encoding as appropriate
+prior_lt_sd,days,Predictor,SD of up to 30 prior completed supplier orders; baseline prior if sparse,True,Fit transforms on Train; date/categorical encoding as appropriate
+port_congestion,decimal 0–100,Predictor,Synthetic route congestion score; zero for non-sea,True,Fit transforms on Train; date/categorical encoding as appropriate
+weather_severity,decimal 0–100,Predictor,Synthetic route weather severity,True,Fit transforms on Train; date/categorical encoding as appropriate
+geopolitical_risk,decimal 0–100,Predictor,Synthetic origin-route geopolitical risk score,True,Fit transforms on Train; date/categorical encoding as appropriate
+strike_flag,0/1,Predictor,Known labour disruption at cutoff,True,Fit transforms on Train; date/categorical encoding as appropriate
+receipt_date,ISO date,Outcome,Final receipt date; blank for scoring,False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+actual_lead_days,integer,Target,Receipt minus order date; blank for scoring,False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+late_flag,0/1,Target,1 if actual exceeds planned; blank for scoring,False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+inventory_on_hand,integer,Decision,Available stock units at cutoff; scenario snapshot,False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+daily_demand,integer,Decision,Expected daily usage in units,False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+unit_cost,EUR/unit,Decision,Primary supplier purchase price,False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+holding_cost,EUR/unit/day,Decision,Unit daily inventory carrying cost,False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+alternate_capacity,integer,Decision,"Alternate supplier available order capacity, units",False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+route_id,text,Predictor,Origin and transport route identifier,True,Fit transforms on Train; date/categorical encoding as appropriate
+signal_date,ISO date,Audit,"Route observation date, always at cutoff",False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+supplier_defect_rate,decimal 0–1,Predictor,Historical quality defect propensity observed at cutoff,True,Fit transforms on Train; date/categorical encoding as appropriate
+supplier_utilisation,decimal 0–1,Predictor,Supplier capacity utilisation snapshot,True,Fit transforms on Train; date/categorical encoding as appropriate
+demand_volatility,decimal 0–1,Predictor,Expected demand coefficient of variation,True,Fit transforms on Train; date/categorical encoding as appropriate
+energy_cost_index,index,Predictor,"Synthetic energy cost index, 100 baseline",True,Fit transforms on Train; date/categorical encoding as appropriate
+production_load,decimal 0–1,Predictor,Receiving plant capacity load,True,Fit transforms on Train; date/categorical encoding as appropriate
+material_criticality,text,Predictor,"Low, Medium or High",True,Fit transforms on Train; date/categorical encoding as appropriate
+historical_receipts_n,integer,Predictor,"Count of prior receipts used, maximum 30",True,Fit transforms on Train; date/categorical encoding as appropriate
+safety_stock_units,integer,Decision,Current buffer target units,False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+alternate_supplier_id,text,Decision,Eligible alternative for same material group,False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+alternate_lead_days,integer,Decision,Alternative quoted lead days; not actual outcome,False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+alternate_unit_cost,EUR/unit,Decision,Alternative quoted unit price,False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+expedite_cost,EUR/order,Decision,Incremental expediting fee,False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+expedite_days_saved,integer,Decision,Estimated days saved under expediting,False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+stockout_cost,EUR/unit,Decision,Scenario penalty per unmet unit,False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+dataset_split,text,Audit,"Train, Validation, Test or Scoring",False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+disruption_regime,text,Audit,Synthetic time regime for subgroup evaluation; exclude from core model,False,"Exclude from core predictors; retain for audit, outcomes or decision support"
+order_status,text,Audit,Completed or Open; exclude from model,False,"Exclude from core predictors; retain for audit, outcomes or decision support"

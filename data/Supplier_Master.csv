@@ -1,0 +1,121 @@
+﻿supplier_id,material_group,origin_country,default_transport_mode,reference_lead_days,reference_unit_cost,nominal_capacity_units
+SUP-001,Semiconductors,France,Road,14.73,34.52,3127
+SUP-002,Electrical components,France,Road,9.89,23.23,3957
+SUP-003,Steel parts,Poland,Road,7.91,12.67,2724
+SUP-004,Machinery components,Czechia,Road,15.52,64.49,2464
+SUP-005,Polymers,China,Sea,38.86,5.03,767
+SUP-006,Chemicals,Taiwan,Sea,43.64,6.21,1421
+SUP-007,Packaging,China,Sea,41.74,1.99,3091
+SUP-008,Fasteners,Germany,Road,3.8,1.64,3799
+SUP-009,Semiconductors,Poland,Road,17.15,39.23,322
+SUP-010,Electrical components,Italy,Road,11.37,27.75,3402
+SUP-011,Steel parts,Poland,Road,13.35,9.98,4928
+SUP-012,Machinery components,Taiwan,Sea,46.5,80.17,4185
+SUP-013,Polymers,Türkiye,Road,15.17,4.83,1166
+SUP-014,Chemicals,Germany,Road,3.19,8.6,4560
+SUP-015,Packaging,Germany,Road,6.09,2.02,3055
+SUP-016,Fasteners,Germany,Road,6.28,1.68,669
+SUP-017,Semiconductors,Türkiye,Road,20.27,39.35,4926
+SUP-018,Electrical components,United States,Sea,30.77,20.18,2405
+SUP-019,Steel parts,France,Road,9.3,16.03,3002
+SUP-020,Machinery components,Italy,Road,16.16,105.85,3811
+SUP-021,Polymers,South Korea,Sea,40.94,6.93,2907
+SUP-022,Chemicals,Germany,Road,5.69,8.7,3670
+SUP-023,Packaging,Taiwan,Sea,41.25,1.65,4925
+SUP-024,Fasteners,Poland,Road,12.65,1.24,3630
+SUP-025,Semiconductors,France,Road,14.61,22.47,4305
+SUP-026,Electrical components,China,Sea,39.43,15.27,965
+SUP-027,Steel parts,Germany,Road,3.05,14.06,3708
+SUP-028,Machinery components,Germany,Road,8.62,56.93,1326
+SUP-029,Polymers,Germany,Road,4.94,6.03,551
+SUP-030,Chemicals,Czechia,Road,12.68,11.88,4177
+SUP-031,Packaging,South Korea,Sea,41.31,2.08,308
+SUP-032,Fasteners,Türkiye,Road,16.0,1.62,437
+SUP-033,Semiconductors,France,Road,14.03,39.67,3785
+SUP-034,Electrical components,Poland,Road,7.29,24.36,2068
+SUP-035,Steel parts,Italy,Road,12.85,12.15,2641
+SUP-036,Machinery components,Italy,Road,16.7,71.61,3698
+SUP-037,Polymers,Germany,Road,7.53,6.86,3507
+SUP-038,Chemicals,Germany,Road,4.78,8.47,2806
+SUP-039,Packaging,Poland,Road,10.34,2.68,1756
+SUP-040,Fasteners,China,Sea,38.33,2.02,4756
+SUP-041,Semiconductors,Poland,Road,13.99,37.7,2259
+SUP-042,Electrical components,France,Road,12.77,17.48,2561
+SUP-043,Steel parts,China,Sea,41.02,9.15,4289
+SUP-044,Machinery components,Czechia,Road,11.36,85.99,4879
+SUP-045,Polymers,Czechia,Road,8.48,5.58,339
+SUP-046,Chemicals,Poland,Road,11.67,9.13,1396
+SUP-047,Packaging,Germany,Road,5.99,1.7,2074
+SUP-048,Fasteners,Germany,Road,5.09,1.89,3968
+SUP-049,Semiconductors,Czechia,Road,11.16,22.75,2113
+SUP-050,Electrical components,Czechia,Road,9.87,22.63,1688
+SUP-051,Steel parts,France,Road,12.11,16.99,2398
+SUP-052,Machinery components,Germany,Road,10.39,95.07,1054
+SUP-053,Polymers,Germany,Road,8.45,4.23,890
+SUP-054,Chemicals,Poland,Road,13.13,9.06,4529
+SUP-055,Packaging,China,Sea,41.27,2.89,1029
+SUP-056,Fasteners,Poland,Road,13.1,1.69,1929
+SUP-057,Semiconductors,South Korea,Sea,47.1,23.62,3520
+SUP-058,Electrical components,Germany,Road,10.0,16.09,1118
+SUP-059,Steel parts,China,Sea,41.71,12.45,4389
+SUP-060,Machinery components,South Korea,Sea,46.46,93.28,4516
+SUP-061,Polymers,Taiwan,Sea,46.68,4.41,3068
+SUP-062,Chemicals,France,Road,7.46,7.84,4046
+SUP-063,Packaging,Germany,Road,6.96,1.91,3001
+SUP-064,Fasteners,Türkiye,Road,17.43,1.14,4289
+SUP-065,Semiconductors,Taiwan,Sea,50.17,42.29,2556
+SUP-066,Electrical components,Germany,Road,7.4,15.51,315
+SUP-067,Steel parts,Germany,Road,7.99,12.25,2812
+SUP-068,Machinery components,Germany,Road,10.32,55.88,2544
+SUP-069,Polymers,France,Road,8.55,4.84,3075
+SUP-070,Chemicals,United States,Sea,32.76,6.31,965
+SUP-071,Packaging,Czechia,Road,12.7,3.0,686
+SUP-072,Fasteners,France,Road,7.95,1.29,1661
+SUP-073,Semiconductors,Taiwan,Sea,50.66,35.91,572
+SUP-074,Electrical components,Germany,Road,7.97,27.69,822
+SUP-075,Steel parts,China,Sea,43.54,17.51,4991
+SUP-076,Machinery components,United States,Sea,33.33,68.63,1242
+SUP-077,Polymers,China,Sea,43.42,5.63,3513
+SUP-078,Chemicals,China,Sea,38.93,9.53,2917
+SUP-079,Packaging,Germany,Road,3.62,2.63,4109
+SUP-080,Fasteners,Germany,Road,7.66,2.1,3889
+SUP-081,Semiconductors,Italy,Road,16.68,29.48,4111
+SUP-082,Electrical components,United States,Sea,30.75,14.28,2024
+SUP-083,Steel parts,France,Road,8.54,9.0,3760
+SUP-084,Machinery components,Italy,Road,15.19,103.36,1013
+SUP-085,Polymers,France,Road,8.1,7.34,3365
+SUP-086,Chemicals,China,Sea,43.69,9.76,3834
+SUP-087,Packaging,Germany,Road,5.5,1.51,686
+SUP-088,Fasteners,Germany,Road,8.03,1.73,3387
+SUP-089,Semiconductors,Taiwan,Sea,46.6,23.18,1803
+SUP-090,Electrical components,Poland,Road,8.17,23.95,1494
+SUP-091,Steel parts,Poland,Road,13.84,17.29,3398
+SUP-092,Machinery components,Germany,Road,8.3,72.5,449
+SUP-093,Polymers,Taiwan,Sea,47.68,6.78,3800
+SUP-094,Chemicals,Taiwan,Sea,42.47,6.91,819
+SUP-095,Packaging,Taiwan,Sea,46.93,2.65,484
+SUP-096,Fasteners,Germany,Road,5.77,1.98,811
+SUP-097,Semiconductors,Czechia,Road,14.08,32.03,1182
+SUP-098,Electrical components,Czechia,Road,10.01,20.98,3806
+SUP-099,Steel parts,Türkiye,Road,16.74,13.63,4339
+SUP-100,Machinery components,Italy,Road,19.82,100.32,1505
+SUP-101,Polymers,Poland,Road,7.91,5.89,4467
+SUP-102,Chemicals,Poland,Road,13.67,11.61,3681
+SUP-103,Packaging,France,Road,9.72,2.64,2930
+SUP-104,Fasteners,Poland,Road,8.52,2.15,1363
+SUP-105,Semiconductors,Poland,Road,15.14,34.44,1900
+SUP-106,Electrical components,Poland,Road,8.78,18.61,3739
+SUP-107,Steel parts,France,Road,8.49,12.85,2002
+SUP-108,Machinery components,United States,Sea,34.75,60.89,3527
+SUP-109,Polymers,Czechia,Road,7.44,4.64,2492
+SUP-110,Chemicals,Poland,Road,12.51,6.78,519
+SUP-111,Packaging,Germany,Road,7.3,2.61,4376
+SUP-112,Fasteners,Czechia,Road,9.29,1.53,2014
+SUP-113,Semiconductors,Germany,Road,9.88,37.46,4968
+SUP-114,Electrical components,China,Sea,40.58,16.73,1968
+SUP-115,Steel parts,Germany,Road,3.79,12.19,2138
+SUP-116,Machinery components,United States,Sea,34.34,74.98,1168
+SUP-117,Polymers,Germany,Road,6.6,6.86,2341
+SUP-118,Chemicals,Taiwan,Sea,47.23,7.59,3765
+SUP-119,Packaging,China,Sea,38.38,1.86,3590
+SUP-120,Fasteners,Germany,Road,4.52,1.33,4275

@@ -1,0 +1,5 @@
+dataset_split,orders,flagged,flag_rate,unknown_cluster
+Scoring,1000,57,0.057,0
+Test,2000,102,0.051,0
+Train,6000,300,0.05,0
+Validation,1000,83,0.083,0

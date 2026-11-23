@@ -1,0 +1,47 @@
+﻿Variable,Type / unit,Role,Definition
+po_id,text,ID,Unique purchase order identifier
+item_id,text,ID,Purchase order line identifier; together with po_id forms key
+order_date,ISO date,Predictor,Purchase order creation date
+as_of_date,ISO date,ID,Prediction cutoff; equals order date
+supplier_id,text,Predictor,Synthetic supplier identifier
+material_group,text,Predictor,Material family
+plant_id,text,Predictor,Synthetic German receiving plant
+origin_country,text,Predictor,Supplier origin
+order_qty,integer,Predictor,Units ordered
+transport_mode,text,Predictor,"Road, Rail, Air or Sea"
+promised_date,ISO date,Predictor,Contractual receipt deadline
+planned_lead_days,integer,Predictor,Promised calendar days from order
+supplier_otd_rate,decimal 0–1,Predictor,"Historical on-time proportion, prior completed receipts only; smoothed"
+prior_lt_mean,days,Predictor,Mean of up to 30 prior completed supplier orders; baseline prior if sparse
+prior_lt_sd,days,Predictor,SD of up to 30 prior completed supplier orders; baseline prior if sparse
+port_congestion,decimal 0–100,Predictor,Synthetic route congestion score; zero for non-sea
+weather_severity,decimal 0–100,Predictor,Synthetic route weather severity
+geopolitical_risk,decimal 0–100,Predictor,Synthetic origin-route geopolitical risk score
+strike_flag,0/1,Predictor,Known labour disruption at cutoff
+receipt_date,ISO date,Outcome,Final receipt date; blank for scoring
+actual_lead_days,integer,Target,Receipt minus order date; blank for scoring
+late_flag,0/1,Target,1 if actual exceeds planned; blank for scoring
+inventory_on_hand,integer,Decision,Available stock units at cutoff; scenario snapshot
+daily_demand,integer,Decision,Expected daily usage in units
+unit_cost,EUR/unit,Decision,Primary supplier purchase price
+holding_cost,EUR/unit/day,Decision,Unit daily inventory carrying cost
+alternate_capacity,integer,Decision,"Alternate supplier available order capacity, units"
+route_id,text,Predictor,Origin and transport route identifier
+signal_date,ISO date,Audit,"Route observation date, always at cutoff"
+supplier_defect_rate,decimal 0–1,Predictor,Historical quality defect propensity observed at cutoff
+supplier_utilisation,decimal 0–1,Predictor,Supplier capacity utilisation snapshot
+demand_volatility,decimal 0–1,Predictor,Expected demand coefficient of variation
+energy_cost_index,index,Predictor,"Synthetic energy cost index, 100 baseline"
+production_load,decimal 0–1,Predictor,Receiving plant capacity load
+material_criticality,text,Predictor,"Low, Medium or High"
+historical_receipts_n,integer,Predictor,"Count of prior receipts used, maximum 30"
+safety_stock_units,integer,Decision,Current buffer target units
+alternate_supplier_id,text,Decision,Eligible alternative for same material group
+alternate_lead_days,integer,Decision,Alternative quoted lead days; not actual outcome
+alternate_unit_cost,EUR/unit,Decision,Alternative quoted unit price
+expedite_cost,EUR/order,Decision,Incremental expediting fee
+expedite_days_saved,integer,Decision,Estimated days saved under expediting
+stockout_cost,EUR/unit,Decision,Scenario penalty per unmet unit
+dataset_split,text,Audit,"Train, Validation, Test or Scoring"
+disruption_regime,text,Audit,Synthetic time regime for subgroup evaluation; exclude from core model
+order_status,text,Audit,Completed or Open; exclude from model

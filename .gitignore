@@ -1,0 +1,39 @@
+# Local R session files
+.Rhistory
+.RData
+.Ruserdata
+.Renviron
+.Rproj.user/
+
+# Local Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Shiny deployment account metadata
+rsconnect/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# User data, local Python environment and test outputs
+.venv/
+adaptive_test_outputs/
+.env
+.Renviron
+rsconnect/
+__pycache__/
+*.pyc
+# Python environments and caches
+*.pyo
+# RStudio and local R settings
+# Credentials and Shiny hosting metadata
+.env.*
+*Connect_To_Shiny_io.R
+# Temporary working files
+*.log
+*.tmp 
+*.tmp 

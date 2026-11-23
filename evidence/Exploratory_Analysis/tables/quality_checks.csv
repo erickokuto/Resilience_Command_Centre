@@ -1,0 +1,32 @@
+check,violations,status
+Expected dimensions,0,PASS
+Duplicate order keys,0,PASS
+Duplicate full records,0,PASS
+Dictionary mismatch,0,PASS
+Missing non-outcome cells,0,PASS
+Missing labelled outcomes,0,PASS
+Nonblank scoring outcomes,0,PASS
+Receipt duration mismatch,0,PASS
+Promised duration mismatch,0,PASS
+Late label mismatch,0,PASS
+Cutoff mismatch,0,PASS
+Nonpositive lead times,0,PASS
+Invalid binary fields,0,PASS
+Invalid fraction fields,0,PASS
+Invalid risk scores,0,PASS
+Non-sea congestion,0,PASS
+Duplicate supplier keys,0,PASS
+Duplicate external keys,0,PASS
+Unknown primary/alternate suppliers,0,PASS
+Alternative material mismatch,0,PASS
+Self-alternative,0,PASS
+External join missing,0,PASS
+External signal value mismatch,0,PASS
+Train receipts mature before Validation,0,PASS
+Validation receipts mature before Test,0,PASS
+Test receipts mature before Scoring,0,PASS
+Train partition matches master,0,PASS
+Validation partition matches master,0,PASS
+Test partition matches master,0,PASS
+Scoring partition matches master,0,PASS
+Historical receipt count mismatch,0,PASS

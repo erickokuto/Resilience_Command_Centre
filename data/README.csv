@@ -1,0 +1,18 @@
+﻿Topic,Guidance
+Purpose,Synthetic data for capstone R/Shiny development; not actual ERP records or evidence of German industry performance.
+Grain,"One purchase order line per row; 10,000 unique keys across four mutually exclusive sheets."
+Prediction cutoff,Order creation date; all predictors are snapshots known at cutoff. Dates stored as ISO text for stable CSV/R imports.
+Model selection,Train on Train; tune/calibrate on Validation; lock models and evaluate once on Test; score Scoring without target labels. Use temporal resampling within Train.
+Time gaps,"Deliberate gaps between partitions ensure preceding receipts are mature before next partition. Gaps are sampling design, not inactivity."
+Leakage,"Do not use receipt_date, actual_lead_days, late_flag, order_status, dataset_split, future data or outcome-derived contemporaneous features as predictors. Exclude identifiers/audit and decision inputs from default core model."
+History,"Supplier histories use completed receipts strictly before order date, with synthetic prior smoothing. Records outside sampled windows are not generated."
+Scoring,"1,000 open-order snapshots with all features and three outcome fields blank. They are a batch of historical-as-of examples, not a single live order book."
+Scenario model,"Inventory and demand are order-level snapshots, not a stock ledger; do not aggregate inventory across orders. Alternative supply and expedite inputs are quotes/assumptions, not measured intervention effects."
+External data,External_Signals contains simulated route-day values; join by signal_date and route_id. Supplier_Master joins by supplier_id.
+Seed,"20261115; stochastic assumptions, unequal supplier sizes, material and route differences, seasonal effects, shared shocks and unobserved errors."
+Context source 1,https://www.ifo.de/en/press-release/2021-12-23/shortage-materials-becoming-more-acute-german-manufacturing
+Context source 2,https://www.ifo.de/en/facts/2024-04-15/availability-materials-germany-approaching-pre-coronavirus-levels
+Context source 3,https://www.ifo.de/en/facts/2025-12-01/material-shortages-german-manufacturing-worsen
+Calibration,"Sources inform qualitative regimes only; rates and coefficients are assumptions, not fitted to German transaction data."
+Shiny upload,"Use readxl::read_excel or CSV; enforce dictionary names/types, ISO dates, allowed categories, unique keys and same preprocessing/model version."
+Resilience evaluation,"Simulate stockout units, service levels and costs under baseline vs intervention with identical demand scenarios; no observed causal benefit or recovery duration is supplied."

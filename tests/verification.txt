@@ -1,0 +1,9 @@
+Validated and scored 1000 records; 57 anomalies; 0 unseen categories.
+Command centre ready: 1000 orders, 12000 order-policy-scenario rows.
+Reference replay: all 1000 keys, actions, forecasts, probabilities, bounds, costs, savings and stockout probabilities matched. Scenario key uniqueness passed.
+Validated and scored 12 records; 1 anomalies; 0 unseen categories.
+Command centre ready: 12 orders, 144 order-policy-scenario rows.
+Missing columns: supplier_id
+Invalid schema rejected as expected.
+
+R source delimiter balance passed; R runtime/browser testing unavailable.

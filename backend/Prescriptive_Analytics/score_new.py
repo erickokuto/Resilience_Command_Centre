@@ -1,0 +1,10 @@
+"""Run after Uncertainty Quantification score_new.py. Inputs: original order CSV, Uncertainty Quantification predictions, validation residual CSV, output."""
+import argparse
+import numpy as np
+import pandas as pd
+from phase5 import KEY,optimise,simulate,evaluate
+p=argparse.ArgumentParser();p.add_argument('orders');p.add_argument('predictions');p.add_argument('validation');p.add_argument('output');a=p.parse_args()
+d=pd.read_csv(a.orders,dtype={'item_id':str}); pred=pd.read_csv(a.predictions,dtype={'item_id':str}); cols=KEY+['predicted_lead_days','raw_late_probability','group_upper_90']; d=d.merge(pred[cols],on=KEY,validate='one_to_one',how='left'); required=['predicted_lead_days','raw_late_probability','group_upper_90','daily_demand','inventory_on_hand','order_qty','alternate_capacity','alternate_lead_days','unit_cost','alternate_unit_cost','holding_cost','stockout_cost','expedite_cost','expedite_days_saved','demand_volatility','planned_lead_days','transport_mode','supplier_id','alternate_supplier_id']; assert not d[required].isna().any().any(); assert (d.daily_demand>0).all(); assert (d[[k for k in required if k not in ['transport_mode','supplier_id','alternate_supplier_id']]]>=0).all().all(); assert d.transport_mode.isin(['Air','Road','Rail','Sea']).all()
+v=pd.read_csv(a.validation); residuals={g:(v.actual_lead_days-v.predicted_lead_days)[v.transport_mode.eq('Sea').eq(g)].to_numpy() for g in [False,True]}; action,buf=optimise(d,residuals); draws=simulate(d,residuals,n=1000,seed=85); m=evaluate(d,draws,action,buf); b=evaluate(d,draws,np.repeat('Maintain',len(d)),np.zeros(len(d))); out=d[KEY].copy();out['action']=action;out['buffer_units']=buf;out['planning_stock_target_90']=np.ceil(d.daily_demand*d.group_upper_90);out['forecast_buffer_over_mean']=np.ceil(d.daily_demand*np.maximum(0,d.group_upper_90-d.predicted_lead_days));
+for k,x in m.items():out[k]=x
+out['baseline_cost']=b['cost'];out['estimated_savings']=b['cost']-m['cost'];out['baseline_stockout_probability']=b['stockout_probability'];out.to_csv(a.output,index=False)
